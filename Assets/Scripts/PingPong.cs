@@ -4,9 +4,9 @@ public class PingPong : MonoBehaviour
 {
     private Transform _transform;
 
-    public Vector3 direction = new Vector3(1.0f, 0.0f, 0.0f);
+    private Vector3 direction = new Vector3(1.0f, 0.0f, 0.0f);
 
-    public float speed = 0f;
+    [SerializeField] private float speed = 0f;
     private float minX = -3;
     private float maxX = 3;
     //public float distans = 3;

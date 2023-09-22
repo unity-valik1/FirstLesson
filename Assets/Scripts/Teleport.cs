@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    private Transform _transform; 
+    private Transform _transform;
 
-    public float teleportSpeed = 0.1f;
+    [SerializeField] private float teleportSpeed = 0.1f;
     private float time = 0f;
     private float timeN = 1.0f;
 

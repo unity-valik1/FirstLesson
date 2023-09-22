@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SpawnPrefabs : MonoBehaviour
 {
-    public GameObject[] prefab;
-    public GameObject instance;
+    [SerializeField] private GameObject[] prefab;
+    [SerializeField] private GameObject instance;
 
     void Start()
     {

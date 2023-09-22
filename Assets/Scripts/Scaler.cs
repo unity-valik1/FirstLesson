@@ -4,9 +4,9 @@ public class Scaler : MonoBehaviour
 {
     private Transform _transform;
 
-    public float scalerSpeed = 1.0f;
-    public float minX = 1;
-    public float maxX = 3;
+    private float scalerSpeed = 1.0f;
+    [SerializeField] private float minX = 1;
+    [SerializeField] private float maxX = 3;
 
     private bool scaler_flag = true;
 

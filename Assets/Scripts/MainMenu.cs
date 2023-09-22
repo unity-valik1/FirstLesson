@@ -8,12 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private SpawnPrefabs spawnPrefabs;
 
-    public Image image;
-    public TMP_Text startText;
-    public Button startButton;
-    public Button menuButton;
-    public Animation animationText;
-    public GameObject spawnScript;
+    [SerializeField] private Image image;
+    [SerializeField] private TMP_Text startText;
+    [SerializeField] private Button startButton;
+    [SerializeField] private Button menuButton;
+    [SerializeField] private Animation animationText;
+    [SerializeField] private GameObject spawnScript;
     void Start()
     {
 
