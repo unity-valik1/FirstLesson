@@ -32,6 +32,7 @@ public class SpawnPrefabs : MonoBehaviour
             instance = Instantiate(prefab[Random.Range(0, prefab.Length)], position, rotation);
         }
     }
+
     public void DeletePrefab()
     {
         Destroy(instance);

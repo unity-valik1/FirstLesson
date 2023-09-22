@@ -1,22 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Scaler : MonoBehaviour
 {
-    public float scalerSpeed = 1.0f;
+    private Transform _transform;
 
+    public float scalerSpeed = 1.0f;
     public float minX = 1;
     public float maxX = 3;
 
     private bool scaler_flag = true;
 
+    private void Start()
+    {
+        _transform = GetComponent<Transform>();
+    }
 
     void Update()
     {
-        float currentScale = transform.localScale.x + scalerSpeed * Time.deltaTime;
+        float currentScale = _transform.localScale.x + scalerSpeed * Time.deltaTime;
 
-        transform.localScale = new Vector3(currentScale, currentScale, currentScale);
+        _transform.localScale = new Vector3(currentScale, currentScale, currentScale);
 
         if (currentScale > maxX && scaler_flag == true)
         {

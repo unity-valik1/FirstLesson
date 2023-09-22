@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     public GameObject spawnScript;
     void Start()
     {
+
     }
 
     public void PlayGame()
@@ -36,16 +37,9 @@ public class MainMenu : MonoBehaviour
     public void MenuGame()
     {
         spawnPrefabs.DeletePrefab();
-
         menuButton.gameObject.SetActive(false);
         startButton.gameObject.SetActive(true);
         spawnScript.SetActive(false);
         image.color = new Color32(35, 48, 34, 255);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
