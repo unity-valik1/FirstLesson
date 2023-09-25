@@ -1,37 +1,80 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PingPong : MonoBehaviour
 {
     private Transform _transform;
 
-    private Vector3 direction = new Vector3(1.0f, 0.0f, 0.0f);
+    [SerializeField] private Vector3 targetPos;
+    private Vector3 pointA;
+    private Vector3 pointB;
 
-    [SerializeField] private float speed = 0f;
-    private float minX = -3;
-    private float maxX = 3;
-    //public float distans = 3;
+    public float speed = 2f;
 
-    private void Start()
+    public void Start()
     {
         _transform = GetComponent<Transform>();
+
+        pointA = _transform.position;
+        pointB = pointA + new Vector3(3, 3, 3);
+
+        targetPos = pointB;
     }
 
-    void Update()
+    public void Update()
     {
-        //float currentPosX = transform.position.x;
-        //float time = currentPosX + speed * Time.deltaTime;
-        //float newPos = Mathf.PingPong(time, distans);
-        //transform.position = new Vector3(newPos, transform.position.y, transform.position.z);
+        Vector3 currentPos = _transform.position;
+        float distance = Vector3.Distance(currentPos, targetPos);
 
-        _transform.Translate(direction * speed * Time.deltaTime);
+        Vector3 direction = (targetPos - _transform.position).normalized;
+        _transform.position += direction * speed * Time.deltaTime;
 
-        if (_transform.position.x <= minX)
+        if (distance < 0.1f)
         {
-            direction = new Vector3(1.0f, 0.0f, 0.0f);
-        }
-        if (_transform.position.x >= maxX)
-        {
-            direction = new Vector3(-1.0f, 0.0f, 0.0f);
+            if (targetPos == pointA)
+            {
+                targetPos = pointB;
+            }
+            else
+            {
+                targetPos = pointA;
+            }
         }
     }
+    //private Transform _transform;
+
+    //[SerializeField] private float speed = 0f;
+
+    //[SerializeField] private float distans;
+    //[SerializeField] private float startTime = 0f;
+
+    //[SerializeField] private Vector3 pointA;
+    //[SerializeField] private Vector3 pointB;
+
+
+    //private void Start()
+    //{
+    //    _transform = GetComponent<Transform>();
+    //    pointA = _transform.position;
+    //    pointB = pointA + new Vector3(2, 2, 2);
+    //    distans = Vector3.Distance(pointA, pointB);
+    //    startTime = Time.time;
+    //}
+
+    //void Update()
+    //{
+
+    //    float distanceCovered = (Time.time - startTime) * speed;//пройденное расстояние
+    //    float fractionOfJourney = distanceCovered / distans;//часть пути
+    //    print(fractionOfJourney);
+    //    _transform.position = Vector3.Lerp(pointA, pointB, fractionOfJourney);
+    //    if (fractionOfJourney >= 1.0f)
+    //    {
+    //        Vector3 temp = pointA;
+    //        pointA = pointB;
+    //        pointB = temp;
+
+    //        startTime = Time.time;
+    //    }
+    //}
 }

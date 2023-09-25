@@ -28,7 +28,7 @@ public class SpawnPrefabs : MonoBehaviour
             }
             var rotation = Quaternion.identity;
             var position = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f), Random.Range(-3.0f, 3.0f));
-            
+
             instance = Instantiate(prefab[Random.Range(0, prefab.Length)], position, rotation);
         }
     }

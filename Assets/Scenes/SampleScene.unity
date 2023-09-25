@@ -800,6 +800,7 @@ MonoBehaviour:
   - {fileID: 5082667174163995023, guid: b2a787914dcccd44d9975518b3be6901, type: 3}
   - {fileID: 3828776433190467346, guid: 706dce4b01e6ddd4e90eff16ba43bcc5, type: 3}
   - {fileID: 6144542051047700566, guid: ea97f46ee0d38f348bb718996740f411, type: 3}
+  - {fileID: 6588221735415237546, guid: 70bca2e27f42e0b43bcfa19804a38015, type: 3}
   instance: {fileID: 0}
 --- !u!1 &963194225
 GameObject:

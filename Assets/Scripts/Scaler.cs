@@ -19,7 +19,7 @@ public class Scaler : MonoBehaviour
     {
         float currentScale = _transform.localScale.x + scalerSpeed * Time.deltaTime;
 
-        _transform.localScale = new Vector3(currentScale, currentScale, currentScale);
+        _transform.localScale = Vector3.one * currentScale; // new Vector3(currentScale, currentScale, currentScale);
 
         if (currentScale > maxX && scaler_flag == true)
         {
@@ -28,7 +28,8 @@ public class Scaler : MonoBehaviour
         }
         if (currentScale < minX && scaler_flag == false)
         {
-            scalerSpeed = 1.0f;
+            scalerSpeed = -scalerSpeed;
+
             scaler_flag = true;
         }
     }
